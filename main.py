@@ -2,7 +2,7 @@ import time
 from datetime import datetime as dt
 
 #Linux host path
-host_path "/etc/hosts"
+host_path = "/etc/hosts"
 #Local host IP address 
 redirect = "127.0.0.1"
 
@@ -17,11 +17,11 @@ active = True
 while active:
 
     #Time period the block is active
-    if dt(dt.now().year, dt.now().month, dt.now().day, 9) < dt.now 
-    < dt(dt.now().year, dt.now().month, dt.now().day, 16):
+    if dt(dt.now().year, dt.now().month, dt.now().day, 9) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 16):
 
         print("No distractions...try again later")
-        with open(host_path, 'r+') as file:
+        time.sleep(5)
+        """with open(host_path, 'r+') as file:
             content = file.read()
 
         for website in content:
@@ -29,10 +29,4 @@ while active:
                 pass
             else:
                 #map the hostname to local host IP
-                file.write(redirect + " " + website  + " \n")
-    
-
-
-            
-
-
+                file.write(redirect + " " + website  + " \n")"""                
