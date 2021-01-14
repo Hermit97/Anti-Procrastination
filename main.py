@@ -44,4 +44,4 @@ while active:
 
             file.truncate()
         print("Access Granted...")
-        break
+    time.sleep(5)
