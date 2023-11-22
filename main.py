@@ -1,9 +1,19 @@
 import time
 from datetime import datetime as dt
+import platform
 
-#Linux host path
-host_path = r"C:/Windows/System32/drivers/etc/hosts"
-#Local host IP address 
+if platform.system() == "Windows": #if windows
+    #Windows host path
+    host_path = r"C:/Windows/System32/drivers/etc/hosts"
+    #Local host IP address 
+elif platform.system() == "Linux": #if Linux
+    #Linux host path
+    host_path = r"C:/Windows/System32/drivers/etc/hosts"
+    #Local host IP address 
+elif platform.system() == "Darwin": #if MacOS??
+    #toDo: add MacOS Host path
+    pass
+
 redirect = "127.0.0.1"
 
 #Websites blocked
@@ -17,8 +27,7 @@ active = True
 while active:
 
     #Time period the block is active
-    print(dt(dt.now().year, dt.now().month, dt.now().day, 0) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 23))
-    if dt(dt.now().year, dt.now().month, dt.now().day, 0) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 23):
+    if dt(dt.now().year, dt.now().month, dt.now().day, 0) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 23): #arbitrary times so that the program always works?
 
         print("No distractions...try again later")
         with open(host_path, 'r+') as file:
